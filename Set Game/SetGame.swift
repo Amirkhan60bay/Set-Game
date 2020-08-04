@@ -11,6 +11,8 @@ import Foundation
 struct SetGame{
     
     var (deck, gameCards) = generateCards()
+    var chosenCards: [Card] = []
+//    var isSet: Bool = false
     
     struct Card: Identifiable {
         
@@ -39,20 +41,102 @@ struct SetGame{
         }
     }
     
-    mutating func choose(card: Card) {
-        print("card is chosen: \(card)")
-        let chosenIndex: Int = self.index(of: card)
-        self.gameCards[chosenIndex].isChosen = !self.gameCards[chosenIndex].isChosen
-    }
-    
-    func index(of card: Card) -> Int {
-        for index in 0..<self.gameCards.count {
-            if self.gameCards[index].id == card.id {
-                return index
+    mutating func Change3Cards() {
+        for i in 0..<gameCards.count {
+            self.gameCards[i].isChosen = false
+        }
+        chosenCards.removeAll()
+        
+        for index in 0..<3 {
+            if !deck.isEmpty{
+                let tempCard = self.gameCards[index]
+                self.gameCards[index] = deck.last!
+                deck.removeLast()
+                deck.append(tempCard)
             }
         }
-        return 0 // TODO: Bogus!
     }
+    
+    mutating func choose(card: Card) {
+        print("card is chosen: \(card.number) \(card.shading) \(card.color) \(card.shape)")
+        if let chosenIndex = gameCards.firstIndex(matching: card){
+            self.gameCards[chosenIndex].isChosen = !self.gameCards[chosenIndex].isChosen
+            
+            if self.gameCards[chosenIndex].isChosen {
+                chosenCards.append(gameCards[chosenIndex])
+            } else{
+                chosenCards = chosenCards.filter { $0.id != self.gameCards[chosenIndex].id}
+            }
+            if chosenCards.count == 3{
+                
+                if isSet(){
+                    var SetCardsIndices: [Int] = []
+//                    isSet = true
+                    print("SET! \n")
+                    
+                    
+                    for i in 0..<gameCards.count {
+                        if (self.gameCards[i].id == chosenCards[0].id) || (self.gameCards[i].id == chosenCards[1].id) || (self.gameCards[i].id == chosenCards[2].id) {
+                            SetCardsIndices.append(i)
+                        }
+                    }
+                    
+                    for index in SetCardsIndices {
+                        if !deck.isEmpty{
+                            self.gameCards[index] = deck.last!
+                            deck.removeLast()
+                            SetCardsIndices.removeFirst()
+                        }
+                    }
+
+                    
+                } else{
+                    print("NOT SET! \n")
+                    for i in 0..<gameCards.count {
+                        self.gameCards[i].isChosen = false
+                    }
+                }
+                    chosenCards.removeAll()
+            }
+        }
+    }
+    
+    func isSet() -> Bool {
+        return (sameShape() || differentShape()) && (sameShading() || differentShading()) && (sameColor() || differentColor()) && (sameNumber() || differentNumber())
+    }
+    
+    func sameShape() -> Bool {
+        return (chosenCards[0].shape == chosenCards[1].shape && chosenCards[0].shape == chosenCards[2].shape)
+    }
+    
+    func differentShape() -> Bool{
+        return (chosenCards[0].shape != chosenCards[1].shape && chosenCards[0].shape != chosenCards[2].shape && chosenCards[1].shape != chosenCards[2].shape)
+    }
+    
+    func sameShading() -> Bool {
+        return (chosenCards[0].shading == chosenCards[1].shading && chosenCards[0].shading == chosenCards[2].shading)
+    }
+    
+    func differentShading() -> Bool{
+        return (chosenCards[0].shading != chosenCards[1].shading && chosenCards[0].shading != chosenCards[2].shading && chosenCards[1].shading != chosenCards[2].shading)
+    }
+    
+    func sameColor() -> Bool {
+        return (chosenCards[0].color == chosenCards[1].color && chosenCards[0].color == chosenCards[2].color)
+    }
+    
+    func differentColor() -> Bool{
+        return (chosenCards[0].color != chosenCards[1].color && chosenCards[0].color != chosenCards[2].color && chosenCards[1].color != chosenCards[2].color)
+    }
+    
+    func sameNumber() -> Bool {
+        return (chosenCards[0].number == chosenCards[1].number && chosenCards[0].number == chosenCards[2].number)
+    }
+    
+    func differentNumber() -> Bool{
+        return (chosenCards[0].number != chosenCards[1].number && chosenCards[0].number != chosenCards[2].number && chosenCards[1].number != chosenCards[2].number)
+    }
+    
     
     static func generateCards() -> ([Card],[Card]) {
         var deck: [Card] = []

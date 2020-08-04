@@ -11,12 +11,15 @@
 		EF36A35A24C05A8E000C1735 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36A35924C05A8E000C1735 /* GridLayout.swift */; };
 		EF36A35C24C09CF6000C1735 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36A35B24C09CF6000C1735 /* SetGame.swift */; };
 		EF56390B24C1A79300C74052 /* ClassicSetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56390A24C1A79300C74052 /* ClassicSetGame.swift */; };
+		EF63972824C72F3400A79D86 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63972724C72F3400A79D86 /* Diamond.swift */; };
 		EFA4609024BF536F003820A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4608F24BF536F003820A3 /* AppDelegate.swift */; };
 		EFA4609224BF536F003820A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4609124BF536F003820A3 /* SceneDelegate.swift */; };
 		EFA4609424BF536F003820A3 /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4609324BF536F003820A3 /* SetGameView.swift */; };
 		EFA4609624BF5371003820A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA4609524BF5371003820A3 /* Assets.xcassets */; };
 		EFA4609924BF5371003820A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA4609824BF5371003820A3 /* Preview Assets.xcassets */; };
 		EFA4609C24BF5371003820A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA4609A24BF5371003820A3 /* LaunchScreen.storyboard */; };
+		EFACD35424C5BB9E00174E3E /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFACD35324C5BB9E00174E3E /* Array+Identifiable.swift */; };
+		EFC36AE824C8763C00B0DA31 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC36AE724C8763C00B0DA31 /* Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,7 @@
 		EF36A35924C05A8E000C1735 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		EF36A35B24C09CF6000C1735 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		EF56390A24C1A79300C74052 /* ClassicSetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicSetGame.swift; sourceTree = "<group>"; };
+		EF63972724C72F3400A79D86 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
 		EFA4608C24BF536F003820A3 /* Set Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Set Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA4608F24BF536F003820A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFA4609124BF536F003820A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		EFA4609824BF5371003820A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EFA4609B24BF5371003820A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFA4609D24BF5371003820A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFACD35324C5BB9E00174E3E /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
+		EFC36AE724C8763C00B0DA31 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,9 @@
 				EF36A35B24C09CF6000C1735 /* SetGame.swift */,
 				EF36A35724C0551C000C1735 /* Grid.swift */,
 				EF36A35924C05A8E000C1735 /* GridLayout.swift */,
+				EFC36AE724C8763C00B0DA31 /* Cardify.swift */,
+				EFACD35324C5BB9E00174E3E /* Array+Identifiable.swift */,
+				EF63972724C72F3400A79D86 /* Diamond.swift */,
 				EFA4609524BF5371003820A3 /* Assets.xcassets */,
 				EFA4609A24BF5371003820A3 /* LaunchScreen.storyboard */,
 				EFA4609D24BF5371003820A3 /* Info.plist */,
@@ -163,7 +172,10 @@
 				EFA4609224BF536F003820A3 /* SceneDelegate.swift in Sources */,
 				EF36A35C24C09CF6000C1735 /* SetGame.swift in Sources */,
 				EF36A35A24C05A8E000C1735 /* GridLayout.swift in Sources */,
+				EFACD35424C5BB9E00174E3E /* Array+Identifiable.swift in Sources */,
+				EF63972824C72F3400A79D86 /* Diamond.swift in Sources */,
 				EFA4609424BF536F003820A3 /* SetGameView.swift in Sources */,
+				EFC36AE824C8763C00B0DA31 /* Cardify.swift in Sources */,
 				EF36A35824C0551C000C1735 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
